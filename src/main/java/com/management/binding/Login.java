@@ -6,7 +6,7 @@ import lombok.Data;
 public class Login {
 
 	private String emaiId;
-	
+
 	private String password;
 
 	public String getEmaiId() {
@@ -24,7 +24,5 @@ public class Login {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
 
 }

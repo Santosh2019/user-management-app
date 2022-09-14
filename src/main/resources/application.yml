@@ -29,4 +29,22 @@ spring:
 server:
   port: 9090
   
+
+user-api:
+ messages:
+  RegistrationSaveSuccess: Registeration done Successfully
+  RegistrationSaveFailed: Registeration Failed 
+  UserDeleted: User deleted successfully
+  UserDeleteFailed: User Id not Found
+  StatusChangeSuccess: Status Change Successfully
+  StatusChangFail: Status Change Fail
+  AccountActive : Account Active   
+  AccountInactive: Account In-Active
+  LoginSuccess : Login Success
+  LoginFailed : Invalid credetainls
+  RegistrationFailed: Registration Failed
+    
+    
+    
+    
     

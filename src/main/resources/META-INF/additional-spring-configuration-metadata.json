@@ -13,5 +13,60 @@
     "name": "server.mail.host",
     "type": "java.lang.String",
     "description": "A description for 'server.mail.host'"
+  },
+  {
+    "name": "user-api.messages.Registration-save-success",
+    "type": "java.lang.String",
+    "description": "A description for 'user-api.messages.Registration-save-success'"
+  },
+  {
+    "name": "user-api.messages.RegistrationSaveFailed",
+    "type": "java.lang.String",
+    "description": "A description for 'user-api.messages.RegistrationSaveFailed'"
+  },
+  {
+    "name": "user-api.messages.UserDeleteFailed",
+    "type": "java.lang.String",
+    "description": "A description for 'user-api.messages.UserDeleteFailed'"
+  },
+  {
+    "name": "user-api.messages.UserDeleted",
+    "type": "java.lang.String",
+    "description": "A description for 'user-api.messages.UserDeleted'"
+  },
+  {
+    "name": "user-api.messages.StatusChangeSuccess",
+    "type": "java.lang.String",
+    "description": "A description for 'user-api.messages.StatusChangeSuccess'"
+  },
+  {
+    "name": "user-api.messages.StatusChangFail",
+    "type": "java.lang.String",
+    "description": "A description for 'user-api.messages.StatusChangFail'"
+  },
+  {
+    "name": "user-api.messages.AccountActive",
+    "type": "java.lang.String",
+    "description": "A description for 'user-api.messages.AccountActive'"
+  },
+  {
+    "name": "user-api.messages.AccountInactive",
+    "type": "java.lang.String",
+    "description": "A description for 'user-api.messages.AccountInactive'"
+  },
+  {
+    "name": "user-api.messages.LoginSuccess",
+    "type": "java.lang.String",
+    "description": "A description for 'user-api.messages.LoginSuccess'"
+  },
+  {
+    "name": "user-api.messages.LoginFailed",
+    "type": "java.lang.String",
+    "description": "A description for 'user-api.messages.LoginFailed'"
+  },
+  {
+    "name": "user-api.messages.RegistrationFailed",
+    "type": "java.lang.String",
+    "description": "A description for 'user-api.messages.RegistrationFailed'"
   }
 ]}
