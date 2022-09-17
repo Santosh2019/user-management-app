@@ -1,5 +1,6 @@
 package org.management.service;
 
+import java.io.IOException;
 import java.util.List;
 
 import com.management.binding.ActiveAccount;
@@ -8,7 +9,7 @@ import com.management.binding.User;
 
 public interface UserService {
 
-	public boolean userSave(User user);
+	public boolean userSave(User user)throws IOException;
 
 	public boolean activeUserAcc(ActiveAccount activeAccount);
 
@@ -22,6 +23,6 @@ public interface UserService {
 
 	public String login(Login login);
 
-	public String forgotPwd(String email);
+	public String forgotPwd(String email)throws IOException;
 
 }

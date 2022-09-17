@@ -5,16 +5,16 @@ import lombok.Data;
 @Data
 public class Login {
 
-	private String emaiId;
+	private String email;
 
 	private String password;
 
-	public String getEmaiId() {
-		return emaiId;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setEmaiId(String emaiId) {
-		this.emaiId = emaiId;
+	public void setEmail(String emaiId) {
+		this.email = emaiId;
 	}
 
 	public String getPassword() {

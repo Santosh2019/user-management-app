@@ -1,8 +1,7 @@
-
 spring:
   application:
     name: user-management-functionality-app
-    
+
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     password: root
@@ -15,7 +14,7 @@ spring:
     show-sql: true
   mail:
     host: smtp.gmail.com
-    password: 
+    password: Developer$143
     port: 587
     properties:
       mail:
@@ -23,13 +22,10 @@ spring:
           auth: true
           starttls:
             enable: true
-    username: santoshlimbale77@rediffmail.com
-
-    
+    username: santoshlimbale76@gmail.com  
 server:
   port: 9090
   
-
 user-api:
  messages:
   RegistrationSaveSuccess: Registeration done Successfully
@@ -44,6 +40,13 @@ user-api:
   LoginFailed : Invalid credetainls
   RegistrationFailed: Registration Failed
     
+
+
+  mail:
+    host: 
+    port: 
+    username: 
+    password: 
     
     
     

@@ -8,11 +8,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "USER_MASTER")
+@Table(name = "USER_MASTER_TBL")
 public class UserMaster {
 
 	@Id
@@ -25,18 +28,20 @@ public class UserMaster {
 
 	private Long mobileNumber;
 
-	private Character gender;
+	private String gender;
 
 	private LocalDate dob;
 
 	private Long ssn;
 
 	private String password;
-	
+
 	private String accStatus;
 
+	@CreationTimestamp
 	private LocalDate createDate;
 
+	@UpdateTimestamp
 	private LocalDate updateDate;
 
 	private String createdBy;
@@ -75,11 +80,11 @@ public class UserMaster {
 		this.mobileNumber = mobileNumber;
 	}
 
-	public Character getGender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(Character gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
@@ -147,6 +152,4 @@ public class UserMaster {
 		this.updatedBy = updatedBy;
 	}
 
-	
-	
 }

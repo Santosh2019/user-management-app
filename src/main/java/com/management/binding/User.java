@@ -9,23 +9,15 @@ public class User {
 
 	private String fullName;
 
-	private String emailId;
+	private String email;
 
 	private Long mobileNumber;
 
-	private Character gender;
+	private String gender;
 
 	private LocalDate dob;
 
 	private Long ssn;
-
-	private LocalDate createdDate;
-
-	private LocalDate updatedDate;
-
-	private String updatedBy;
-
-	private String createdBy;
 
 	public String getFullName() {
 		return fullName;
@@ -35,12 +27,12 @@ public class User {
 		this.fullName = fullName;
 	}
 
-	public String getEmailId() {
-		return emailId;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setEmailId(String emailId) {
-		this.emailId = emailId;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public Long getMobileNumber() {
@@ -51,11 +43,11 @@ public class User {
 		this.mobileNumber = mobileNumber;
 	}
 
-	public Character getGender() {
+	public String getGender() {
 		return gender;
 	}
 
-	public void setGender(Character gender) {
+	public void setGender(String gender) {
 		this.gender = gender;
 	}
 
@@ -75,36 +67,5 @@ public class User {
 		this.ssn = ssn;
 	}
 
-	public LocalDate getCreatedDate() {
-		return createdDate;
-	}
-
-	public void setCreatedDate(LocalDate createdDate) {
-		this.createdDate = createdDate;
-	}
-
-	public LocalDate getUpdatedDate() {
-		return updatedDate;
-	}
-
-	public void setUpdatedDate(LocalDate updatedDate) {
-		this.updatedDate = updatedDate;
-	}
-
-	public String getUpdatedBy() {
-		return updatedBy;
-	}
-
-	public void setUpdatedBy(String updatedBy) {
-		this.updatedBy = updatedBy;
-	}
-
-	public String getCreatedBy() {
-		return createdBy;
-	}
-
-	public void setCreatedBy(String createdBy) {
-		this.createdBy = createdBy;
-	}
-
+	
 }
