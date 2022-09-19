@@ -14,15 +14,16 @@ spring:
     show-sql: true
   mail:
     host: smtp.gmail.com
-    password: Developer$143
     port: 587
+    username: santoshlimbale76@gmail.com
+    password: wsmpfquiygapujnj
+    protocol: smtp
     properties:
       mail:
         smtp:
           auth: true
           starttls:
             enable: true
-    username: santoshlimbale76@gmail.com  
 server:
   port: 9090
   
@@ -39,15 +40,3 @@ user-api:
   LoginSuccess : Login Success
   LoginFailed : Invalid credetainls
   RegistrationFailed: Registration Failed
-    
-
-
-  mail:
-    host: 
-    port: 
-    username: 
-    password: 
-    
-    
-    
-    
