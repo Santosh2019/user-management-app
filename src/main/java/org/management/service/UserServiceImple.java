@@ -38,7 +38,6 @@ public class UserServiceImple implements UserService {
 		entity.setAccStatus("In-Active");
 
 		UserMaster save = repo.save(entity);
-
 		String subject = "Your Registeration Success";
 		String filename = "REG-EMAIL-BODY.txt";
 		String body = readEmailBody(entity.getFullName(), entity.getPassword(), filename);
@@ -136,7 +135,7 @@ public class UserServiceImple implements UserService {
 			}
 		}
 	}
-	
+
 	@Override
 	public String forgotPwd(String email) throws IOException {
 		UserMaster entity = repo.findByEmail(email);

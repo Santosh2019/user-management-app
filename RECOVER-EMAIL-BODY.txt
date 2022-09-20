@@ -2,7 +2,7 @@ Hi {FULLNAME}, </br>
 </br>
 Please find  your password below:</br>
 </br>
-Password {PWD}</br>
+Password :{PWD}</br>
 </br>
 Thank</br>
 Admin Team.
