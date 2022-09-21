@@ -16,7 +16,11 @@
 	<description>User Management System functionality having CRUD operation </description>
 	<properties>
 		<java.version>1.8</java.version>
+		<sonar.host.url>http://52.66.48.121:9000/</sonar.host.url>
+		<sonar.login>admin</sonar.login>
+		<sonar.password>admin</sonar.password>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -42,7 +46,6 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.37</version><!--$NO-MVN-MAN-VER$ -->
 		</dependency>
-
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

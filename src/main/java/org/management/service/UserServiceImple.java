@@ -85,7 +85,7 @@ public class UserServiceImple implements UserService {
 			BeanUtils.copyProperties(userMaster, user);
 			return user;
 		}
-
+		
 		return null;
 	}
 
