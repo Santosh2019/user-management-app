@@ -16,7 +16,7 @@
 	<description>User Management System functionality having CRUD operation </description>
 	<properties>
 		<java.version>1.8</java.version>
-		<sonar.host.url>http://52.66.48.121:9000/</sonar.host.url>
+		<sonar.host.url>http://13.126.22.37:9000/</sonar.host.url>
 		<sonar.login>admin</sonar.login>
 		<sonar.password>admin</sonar.password>
 	</properties>

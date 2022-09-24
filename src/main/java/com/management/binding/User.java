@@ -67,5 +67,4 @@ public class User {
 		this.ssn = ssn;
 	}
 
-	
 }

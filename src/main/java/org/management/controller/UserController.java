@@ -68,9 +68,9 @@ public class UserController {
 	public ResponseEntity<String> deleteUser(@PathVariable Integer userId) {
 		boolean isDeleted = userService.deleteUserById(userId);
 		if (isDeleted) {
-			return new ResponseEntity<String>("Deleted", HttpStatus.OK);
+			return new ResponseEntity<>("Deleted", HttpStatus.OK);
 		} else {
-			return new ResponseEntity<String>("Failed", HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>("Failed", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
@@ -78,21 +78,21 @@ public class UserController {
 	public ResponseEntity<String> updateStatus(@PathVariable Integer userId, @PathVariable String accStatus) {
 		boolean isChangeStatus = userService.changeAccountStatus(userId, accStatus);
 		if (isChangeStatus) {
-			return new ResponseEntity<String>("Status Change", HttpStatus.OK);
+			return new ResponseEntity<>("Status Change", HttpStatus.OK);
 		} else {
-			return new ResponseEntity<String>("Faied", HttpStatus.INTERNAL_SERVER_ERROR);
+			return new ResponseEntity<>("Faied", HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
 
 	@PostMapping("/login")
 	public ResponseEntity<String> login(@RequestBody Login login) {
 		String isLogin = userService.login(login);
-		return new ResponseEntity<String>(isLogin, HttpStatus.OK);
+		return new ResponseEntity<>(isLogin, HttpStatus.OK);
 	}
 
 	@GetMapping("/forgotPwd/{email}")
 	public ResponseEntity<String> forgotPwd(@PathVariable String email) throws IOException {
 		String status = userService.forgotPwd(email);
-		return new ResponseEntity<String>(status, HttpStatus.OK);
+		return new ResponseEntity<>(status, HttpStatus.OK);
 	}
 }

@@ -3,15 +3,20 @@ package org.management.utils;
 
 import javax.mail.internet.MimeMessage;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Component;
+
 @Component
 public class EmailUtils {
 
 	@Autowired
 	private JavaMailSender mailSender;
+
+	Logger logger = LoggerFactory.getLogger(EmailUtils.class);
 
 	public boolean sendEmail(String to, String subject, String body) {
 		boolean isMailSent = false;
@@ -27,7 +32,7 @@ public class EmailUtils {
 			isMailSent = true;
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Exception occured", e);
 		}
 
 		return isMailSent;

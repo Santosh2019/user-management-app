@@ -11,6 +11,8 @@ import java.util.Random;
 import org.management.dao.UserMasterRepository;
 import org.management.entity.UserMaster;
 import org.management.utils.EmailUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
@@ -29,6 +31,10 @@ public class UserServiceImple implements UserService {
 	@Autowired
 	private EmailUtils emailUtils;
 
+	Random random = new Random();
+
+	Logger logger = LoggerFactory.getLogger(UserServiceImple.class);
+
 	@Override
 	public boolean userSave(User user) throws IOException {
 		UserMaster entity = new UserMaster();
@@ -42,7 +48,6 @@ public class UserServiceImple implements UserService {
 		String filename = "REG-EMAIL-BODY.txt";
 		String body = readEmailBody(entity.getFullName(), entity.getPassword(), filename);
 		emailUtils.sendEmail(user.getEmail(), subject, body);
-		System.out.println(body);
 		return save.getUserId() != null;
 	}
 
@@ -85,7 +90,6 @@ public class UserServiceImple implements UserService {
 			BeanUtils.copyProperties(userMaster, user);
 			return user;
 		}
-		
 		return null;
 	}
 
@@ -95,8 +99,7 @@ public class UserServiceImple implements UserService {
 			repo.deleteById(userId);
 			return true;
 		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
+			logger.error("Exception Occured", e);
 		}
 		return false;
 	}
@@ -115,15 +118,6 @@ public class UserServiceImple implements UserService {
 
 	@Override
 	public String login(Login login) {
-		/*
-		 * UserMaster entity = new UserMaster();
-		 * 
-		 * entity.setEmail(login.getEmaiId()); entity.setPassword(login.getPassword());
-		 * 
-		 * Example<UserMaster> of = Example.of(entity);
-		 * 
-		 * List<UserMaster> findAll = repo.findAll(of);
-		 */
 		UserMaster userMaster = repo.findByEmailAndPassword(login.getEmail(), login.getPassword());
 		if (userMaster == null) {
 			return "Invalid Credetianls";
@@ -139,7 +133,6 @@ public class UserServiceImple implements UserService {
 	@Override
 	public String forgotPwd(String email) throws IOException {
 		UserMaster entity = repo.findByEmail(email);
-		System.out.println(entity);
 		if (entity == null) {
 			return "Invalid Email";
 		}
@@ -159,10 +152,9 @@ public class UserServiceImple implements UserService {
 		String numbers = "0123456789";
 		String alphaNumeric = upperAlphabet + lowerAlphabet + numbers;
 		StringBuilder sb = new StringBuilder();
-		Random random = new Random();
 		int length = 7;
 		for (int i = 0; i < length; i++) {
-			int index = random.nextInt(alphaNumeric.length());
+			int index = this.random.nextInt(alphaNumeric.length());
 			char randomChar = alphaNumeric.charAt(index);
 			sb.append(randomChar);
 		}
@@ -172,24 +164,21 @@ public class UserServiceImple implements UserService {
 	private String readEmailBody(String fullName, String pwd, String filename) throws IOException {
 		String mailBody = null;
 		String url = "";
-		try {
-			FileReader fr = new FileReader(filename);
-			BufferedReader br = new BufferedReader(fr);
-			StringBuffer buffer = new StringBuffer();
+		try (FileReader fr = new FileReader(filename); BufferedReader br = new BufferedReader(fr);) {
+
+			StringBuilder buffer = new StringBuilder();
 			String line = br.readLine();
 			while (line != null) {
 				buffer.append(line);
 				line = br.readLine();
 			}
-			br.close();
 			mailBody = buffer.toString();
 			mailBody = mailBody.replace("{FULLNAME}", fullName);
 			mailBody = mailBody.replace("{TEMP-PWD}", pwd);
 			mailBody = mailBody.replace("{URL}", url);
 			mailBody = mailBody.replace("{PWD}", pwd);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.error("Exception Occured", e);
 		}
 		return mailBody;
 	}
